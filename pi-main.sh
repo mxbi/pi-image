@@ -12,6 +12,10 @@ echo "127.0.0.1	$(hostname)" >> /etc/hosts
 
 mkdir sb-debs
 
+echo "Enabling SSH login"
+echo "sudo systemctl enable ssh"
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+
 echo "Adding local repository to sources"
 echo "deb [trusted=yes] file:/sb-debs ./" >> /etc/apt/sources.list
 echo "deb-src [trusted=yes] file:/sb-debs ./" >> /etc/apt/sources.list
@@ -69,7 +73,4 @@ proc	/proc	proc	defaults	0	0
 EOF
 
 echo "Installing additional libraries"
-apt-get install -y \
-    python3-scipy \
-    python3-numpy
-
+apt-get install -y python3-scipy python3-numpy
