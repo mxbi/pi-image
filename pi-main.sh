@@ -10,9 +10,6 @@ export LANG="en_GB.UTF-8"
 echo "Putting hostname into /etc/hosts"
 echo "127.0.0.1	$(hostname)" >> /etc/hosts
 
-echo "Disable dhcpcd"
-systemctl disable dhcpcd.service
-
 mkdir sb-debs
 
 echo "Adding local repository to sources"
