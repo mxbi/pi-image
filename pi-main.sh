@@ -13,7 +13,7 @@ echo "127.0.0.1	$(hostname)" >> /etc/hosts
 mkdir sb-debs
 
 echo "Enabling SSH login"
-echo "sudo systemctl enable ssh"
+sudo systemctl enable ssh
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
 echo "Adding local repository to sources"
